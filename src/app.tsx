@@ -7,6 +7,9 @@ import ReactMapboxGL, {
   NavigationControl,
   Source,
 } from 'react-map-gl'
+
+import { Feature } from 'geojson'
+
 import * as Dialog from '@radix-ui/react-dialog'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
@@ -19,7 +22,7 @@ export function App() {
   const start = startPoint.coordinates.split(',').map(parseFloat)
   const end = endPoint.coordinates.split(',').map(parseFloat)
 
-  const polyline = {
+  const polyline: Feature = {
     type: 'Feature',
     properties: {},
     geometry: {
@@ -38,8 +41,8 @@ export function App() {
         <ReactMapboxGL
           mapboxAccessToken="pk.eyJ1IjoibXVyaWxvMzIzIiwiYSI6ImNsdXNsaDUwbDAyODMybW15YWpqcjhuenoifQ.Hzq9779iQ8n65zNh2a7Cew"
           initialViewState={{
-            latitude: Number(start[0]),
-            longitude: Number(start[1]),
+            latitude: start[0],
+            longitude: start[1],
             zoom: 10,
           }}
           style={{ width: '100%', height: '90vh' }}
