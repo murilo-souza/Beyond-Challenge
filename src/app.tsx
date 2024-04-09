@@ -7,11 +7,8 @@ import ReactMapboxGL, {
   NavigationControl,
   Source,
 } from 'react-map-gl'
-
 import { Feature } from 'geojson'
-
 import * as Dialog from '@radix-ui/react-dialog'
-
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { Modal } from './components/modal'
 import { useCoordinates } from './context/coordinates-context'
@@ -39,7 +36,7 @@ export function App() {
       <Header />
       <div>
         <ReactMapboxGL
-          mapboxAccessToken="pk.eyJ1IjoibXVyaWxvMzIzIiwiYSI6ImNsdXNsaDUwbDAyODMybW15YWpqcjhuenoifQ.Hzq9779iQ8n65zNh2a7Cew"
+          mapboxAccessToken={import.meta.env.VITE_API_ACCESS_TOKEN}
           initialViewState={{
             latitude: start[0],
             longitude: start[1],
