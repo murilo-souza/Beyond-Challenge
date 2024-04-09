@@ -11,19 +11,23 @@ import * as Dialog from '@radix-ui/react-dialog'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { Modal } from './components/modal'
+import { useCoordinates } from './context/coordinates-context'
 
 export function App() {
-  const points = [
-    { latitude: -23.628221, longitude: -46.6596195 },
-    { latitude: -22.9102755, longitude: -43.1670474 },
-  ]
+  const { startPoint, endPoint } = useCoordinates()
+
+  const start = startPoint.coordinates.split(',').map(parseFloat)
+  const end = endPoint.coordinates.split(',').map(parseFloat)
 
   const polyline = {
     type: 'Feature',
     properties: {},
     geometry: {
       type: 'LineString',
-      coordinates: points.map((point) => [point.longitude, point.latitude]),
+      coordinates: [
+        [start[1], start[0]],
+        [end[1], end[0]],
+      ],
     },
   }
 
@@ -34,8 +38,8 @@ export function App() {
         <ReactMapboxGL
           mapboxAccessToken="pk.eyJ1IjoibXVyaWxvMzIzIiwiYSI6ImNsdXNsaDUwbDAyODMybW15YWpqcjhuenoifQ.Hzq9779iQ8n65zNh2a7Cew"
           initialViewState={{
-            latitude: -23.628221,
-            longitude: -46.6596195,
+            latitude: Number(start[0]),
+            longitude: Number(start[1]),
             zoom: 10,
           }}
           style={{ width: '100%', height: '90vh' }}
@@ -49,15 +53,13 @@ export function App() {
             <GeolocateControl />
           </div>
 
-          {points.map((point, key) => (
-            <Marker
-              key={key}
-              longitude={point.longitude}
-              latitude={point.latitude}
-            >
-              <MapPin className="text-marker size-7" />
-            </Marker>
-          ))}
+          <Marker latitude={start[0]} longitude={start[1]}>
+            <MapPin className="text-marker size-7" />
+          </Marker>
+
+          <Marker latitude={end[0]} longitude={end[1]}>
+            <MapPin className="text-marker size-7" />
+          </Marker>
 
           <Source type="geojson" data={polyline}>
             <Layer
