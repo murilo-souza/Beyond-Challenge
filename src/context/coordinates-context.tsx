@@ -6,7 +6,6 @@ import {
   useState,
 } from 'react'
 import { airportData } from '../utils/airport-data'
-
 interface Airport {
   airportName: string
   airportCode: string
@@ -36,6 +35,7 @@ export function CoordinatesContextProvider({
     const selectedAirport = airportData.find(
       (airport) => airport.airportCode === value,
     )
+
     if (selectedAirport) {
       setStartPoint(selectedAirport)
     }
