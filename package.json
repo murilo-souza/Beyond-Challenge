@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@radix-ui/react-dialog": "^1.0.5",
     "@types/mapbox-gl": "^3.1.0",
     "lucide-react": "^0.366.0",
     "mapbox-gl": "^3.2.0",
