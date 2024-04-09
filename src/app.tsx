@@ -1,4 +1,4 @@
-import { ArrowUpSquare, MapPin } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 import { Header } from './components/header'
 import ReactMapboxGL, {
   GeolocateControl,
@@ -8,10 +8,10 @@ import ReactMapboxGL, {
   Source,
 } from 'react-map-gl'
 import { Feature } from 'geojson'
-import * as Dialog from '@radix-ui/react-dialog'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import { Modal } from './components/modal'
 import { useCoordinates } from './context/coordinates-context'
+
+import { ModalView } from './components/modal-view'
 
 export function App() {
   const { startPoint, endPoint } = useCoordinates()
@@ -74,14 +74,7 @@ export function App() {
         </ReactMapboxGL>
       </div>
 
-      <Dialog.Root>
-        <Dialog.DialogTrigger asChild>
-          <button className="absolute bottom-10 left-6 bg-white rounded-full p-3">
-            <ArrowUpSquare className="size-10" />
-          </button>
-        </Dialog.DialogTrigger>
-        <Modal />
-      </Dialog.Root>
+      <ModalView />
     </main>
   )
 }
