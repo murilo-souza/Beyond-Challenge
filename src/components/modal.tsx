@@ -1,7 +1,9 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { X } from 'lucide-react'
+import { useCoordinates } from '../context/coordinates-context'
 
 export function Modal() {
+  const { startPoint, endPoint } = useCoordinates()
   return (
     <Dialog.Portal>
       <Dialog.Overlay className="bg-black/55 data-[state=open]:animate-overlayShow fixed inset-0" />
@@ -11,16 +13,17 @@ export function Modal() {
         </Dialog.Title>
 
         <div className="flex flex-col items-center justify-center gap-5">
-          <div className="flex items-center justify-between max-w-[350px] min-w-[350px]">
-            <span className="text-white font-medium">xcnfcefenujfn</span>
-            <span className="text-white font-medium">dnwiuwunuw</span>
+          <span className="text-white font-medium">
+            {startPoint.airportName}
+          </span>
+
+          <div className="flex flex-col items-center max-w-[300px] min-w-[300px]">
+            <div className="rounded-full bg-white size-3" />
+            <div className="w-1 h-[300px] bg-white" />
+            <div className="rounded-full bg-white size-3" />
           </div>
 
-          <div className="flex items-center max-w-[300px] min-w-[300px]">
-            <div className="rounded-full bg-white size-3" />
-            <div className="w-full h-1 bg-white" />
-            <div className="rounded-full bg-white size-3" />
-          </div>
+          <span className="text-white font-medium">{endPoint.airportName}</span>
         </div>
 
         <Dialog.Close asChild>

@@ -4,7 +4,7 @@ import { Selector } from './selector'
 import { useCoordinates } from '../context/coordinates-context'
 
 export function Header() {
-  const { selector, startPoint, handleStartChange, handleEndChange } =
+  const { selector, startPoint, handleStartChange, handleEndChange, endPoint } =
     useCoordinates()
   return (
     <header className="flex items-center justify-between px-3 py-2 bg-header">
@@ -18,7 +18,7 @@ export function Header() {
         <ArrowRight className="size-7 text-white" />
         <Selector
           defaultValue={selector[1].airportCode}
-          value={startPoint.airportCode}
+          value={endPoint.airportCode}
           onChange={handleEndChange}
         />
       </div>
