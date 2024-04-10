@@ -1,5 +1,7 @@
 # Beyond Challenge
 
+![image](https://github.com/murilo-souza/Beyond-Challenge/assets/53982668/3a1d8ab2-bdf7-4b36-bb9b-544909da9c0b)
+
 Este repositório contém um projeto React configurado com Vite, um bundler para desenvolvimento web rápido. O objetivo deste documento é fornecer instruções sobre como executar o projeto localmente e destacar as principais funcionalidades da aplicação desenvolvida.
 
 ## Executando o Projeto
