@@ -11,7 +11,7 @@ export function Modal({ onClose }: ModalProps) {
   return (
     <motion.div
       layoutId="modal-view"
-      className="fixed top-28 left-3 max-h-[85vh] w-[90vw] max-w-[450px] rounded-[5px] bg-header p-[25px] transition-opacity"
+      className="fixed top-28 left-3 max-h-[85vh] w-[90vw] max-w-[450px] rounded-[5px] bg-primary p-[25px] transition-opacity"
     >
       <motion.h1 className="text-white font-medium text-2xl mb-10">
         Informações

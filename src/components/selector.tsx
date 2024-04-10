@@ -9,7 +9,7 @@ export function Selector({ ...rest }: SelectProps) {
   return (
     <select
       {...rest}
-      className="inline-flex items-center justify-center rounded-md py-0 px-3 text-sm h-10 bg-header text-zinc-200 border-2 border-solid border-white"
+      className="inline-flex items-center justify-center rounded-md py-0 px-3 text-sm h-10 bg-primary text-zinc-200 border-2 border-solid border-white"
     >
       {selector.map((airport) => (
         <option

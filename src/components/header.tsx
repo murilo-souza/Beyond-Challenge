@@ -7,7 +7,7 @@ export function Header() {
   const { selector, startPoint, handleStartChange, handleEndChange, endPoint } =
     useCoordinates()
   return (
-    <header className="flex items-center justify-between px-3 py-2 bg-header">
+    <header className="flex items-center justify-between px-3 py-2 bg-primary">
       <img src={Logo} alt="Logo" />
       <div className="flex items-center gap-10">
         <Selector

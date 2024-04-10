@@ -38,7 +38,7 @@ export function Home() {
           initialViewState={{
             latitude: start[0],
             longitude: start[1],
-            zoom: 8,
+            zoom: 7,
           }}
           mapboxAccessToken={import.meta.env.VITE_API_ACCESS_TOKEN}
           style={{ width: '100%', height: '90vh' }}

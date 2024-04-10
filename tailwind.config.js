@@ -4,8 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        header: '#141414',
-        modal: '#27292E',
+        primary: '#141414',
         marker: '#77BC58',
       },
     },
