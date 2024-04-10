@@ -5,7 +5,6 @@ import ReactMapboxGL, {
   Marker,
   NavigationControl,
   Source,
-  useMap,
 } from 'react-map-gl'
 import { Feature } from 'geojson'
 import 'mapbox-gl/dist/mapbox-gl.css'
@@ -15,7 +14,6 @@ import { ModalView } from '../components/modal-view'
 
 export function Home() {
   const { startPoint, endPoint } = useCoordinates()
-  const { current: map } = useMap()
 
   const start = startPoint.coordinates.split(',').map(parseFloat)
   const end = endPoint.coordinates.split(',').map(parseFloat)
@@ -32,33 +30,25 @@ export function Home() {
     },
   }
 
-  function handleClick() {
-    map?.flyTo({
-      center: [start[0], start[1]],
-      zoom: 7,
-      animate: true,
-    })
-  }
-
   return (
     <main>
       <Header />
       <div>
         <ReactMapboxGL
-          mapboxAccessToken={import.meta.env.VITE_API_ACCESS_TOKEN}
           initialViewState={{
             latitude: start[0],
             longitude: start[1],
-            zoom: 7,
+            zoom: 8,
           }}
+          mapboxAccessToken={import.meta.env.VITE_API_ACCESS_TOKEN}
           style={{ width: '100%', height: '90vh' }}
           mapStyle="mapbox://styles/mapbox/dark-v11"
         >
-          <div style={{ position: 'absolute', right: 10, top: 10 }}>
+          <div className="absolute right-3 top-3">
             <NavigationControl />
           </div>
 
-          <div style={{ position: 'absolute', right: 10, top: 40 }}>
+          <div className="absolute left-3 top-10">
             <GeolocateControl />
           </div>
 
@@ -80,9 +70,6 @@ export function Home() {
               }}
             />
           </Source>
-          <button className="bg-white absolute top-0" onClick={handleClick}>
-            teste
-          </button>
         </ReactMapboxGL>
       </div>
 
