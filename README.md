@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
+# Beyond Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositório contém um projeto React configurado com Vite, um bundler para desenvolvimento web rápido. O objetivo deste documento é fornecer instruções sobre como executar o projeto localmente e destacar as principais funcionalidades da aplicação desenvolvida.
 
-Currently, two official plugins are available:
+## Executando o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Siga os passos abaixo para executar o projeto em sua máquina local:
 
-## Expanding the ESLint configuration
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/murilo-souza/Beyond-Challenge.git
+   
+2. **Navegue até o diretório do projeto:**
+   ```bash
+   cd Beyond-Challenge
+   
+3. **Instale as dependências:**
+    <br/>
+    Certifique-se de ter o Node.js e o npm instalados em sua máquina. Execute o seguinte comando para instalar as dependências do projeto:
+    <br/>
+   ```bash
+   npm install
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+4. **Configure o ambiente conforme o arquivo .env.example**
+  <br/>
+  Criei um arquivo .env.local e siga a instrução abaixo
+  ```bash
+  VITE_API_ACCESS_TOKEN="<Seu access token vindo do site da MapBox>"
 
-- Configure the top-level `parserOptions` property like this:
+5. **Inicie o servidor de desenvolvimento:**
+   <br/>
+   Após a instalação das dependências, inicie o servidor de desenvolvimento executando:
+   <br/>
+   ```bash
+   npm run dev
+   ```
+   Isso iniciará o servidor de desenvolvimento em http://localhost:5173. Você pode visualizar o aplicativo no seu navegador.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Features da Aplicação
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. **Selecionar destinos de aeroportos:**
+   - Os usuários podem escolher para quais aeroportos irem.
+
+2. **Abrir e fechar modal:**
+   - Os usuários podem abrir e fechar a modal.
+
+3. **Animação:**
+   - A aplicação tem uma animação quando o usuário abre e fecha a modal.
+
+4. **Visualização do mapa:**
+   - Os usuários podem visualizar e interagir com o mapa por meio da API do Mapbox.
+   
