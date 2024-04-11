@@ -12,6 +12,7 @@
   "dependencies": {
     "@types/mapbox-gl": "^3.1.0",
     "framer-motion": "^11.0.25",
+    "haversine": "^1.1.1",
     "lucide-react": "^0.366.0",
     "mapbox-gl": "^3.2.0",
     "react": "^18.2.0",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",
+    "@types/haversine": "^1.1.8",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",

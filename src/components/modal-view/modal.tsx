@@ -1,6 +1,7 @@
 import { X } from 'lucide-react'
 import { useAirport } from '../../context/airport-context'
 import { motion } from 'framer-motion'
+import haversine from 'haversine'
 
 interface ModalProps {
   onClose: () => void
@@ -8,6 +9,14 @@ interface ModalProps {
 
 export function Modal({ onClose }: ModalProps) {
   const { startPoint, endPoint } = useAirport()
+  const start = startPoint.coordinates.split(',').map(parseFloat)
+  const end = endPoint.coordinates.split(',').map(parseFloat)
+
+  const distance = haversine(
+    { latitude: start[0], longitude: start[1] },
+    { latitude: end[0], longitude: end[1] },
+  )
+
   return (
     <motion.div
       layoutId="modal-view"
@@ -18,6 +27,10 @@ export function Modal({ onClose }: ModalProps) {
       </motion.h1>
 
       <motion.div className="flex flex-col items-center justify-center gap-5">
+        <motion.span className="text-white font-medium">
+          Distância: {distance.toFixed(2)} km
+        </motion.span>
+
         <motion.span className="text-white font-medium">
           {startPoint.airportName}
         </motion.span>
