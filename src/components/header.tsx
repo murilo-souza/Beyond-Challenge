@@ -8,8 +8,8 @@ export function Header() {
   const { selector, startPoint, handleStartChange, handleEndChange, endPoint } =
     useAirport()
   return (
-    <header className="flex items-center justify-between px-3 py-2 bg-primary">
-      <img src={Logo} alt="Logo" />
+    <header className="flex items-center justify-between px-3 py-2 bg-primary max-h-[10vh] min-h-[10vh]">
+      <img src={Logo} alt="Logo" className="w-[90px]" />
       <div className="flex items-center gap-10">
         <Selector
           defaultValue={selector[0].airportCode}
