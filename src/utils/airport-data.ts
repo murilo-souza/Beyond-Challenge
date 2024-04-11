@@ -24,4 +24,24 @@ export const airportData = [
     airportCode: 'SBCX',
     coordinates: '-29.1949143, -51.1915436',
   },
+  {
+    airportName: 'Aeroporto Internacional de Manaus',
+    airportCode: 'SBEG',
+    coordinates: '-3.030948, -60.048958',
+  },
+  {
+    airportName: 'Aeroporto Internacional de Porto Velho',
+    airportCode: 'SBPV',
+    coordinates: '-8.715064, -63.901282',
+  },
+  {
+    airportName: 'Aeroporto Internacional de Belém',
+    airportCode: 'SBBE',
+    coordinates: '-1.387579, -48.477183',
+  },
+  {
+    airportName: 'Aeroporto Internacional de Boa Vista',
+    airportCode: 'SBBV',
+    coordinates: '2.846463, -60.692978',
+  },
 ]
