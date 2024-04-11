@@ -6,8 +6,10 @@ interface NavButtonProps {
 }
 
 export function NavButton({ coordinates }: NavButtonProps) {
+  // Hook para manipular o mapa
   const { current } = useMap()
 
+  // Centraliza o mapa na coordenada informada
   function handleNavigate() {
     current?.flyTo({
       center: [coordinates[1], coordinates[0]],
