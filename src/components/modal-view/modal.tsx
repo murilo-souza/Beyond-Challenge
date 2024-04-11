@@ -9,9 +9,12 @@ interface ModalProps {
 
 export function Modal({ onClose }: ModalProps) {
   const { startPoint, endPoint } = useAirport()
+
+  // Divide as coordenadas em latitude e longitude
   const start = startPoint.coordinates.split(',').map(parseFloat)
   const end = endPoint.coordinates.split(',').map(parseFloat)
 
+  // Distância entre os aeroportos
   const distance = haversine(
     { latitude: start[0], longitude: start[1] },
     { latitude: end[0], longitude: end[1] },
