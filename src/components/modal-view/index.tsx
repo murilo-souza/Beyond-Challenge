@@ -3,6 +3,7 @@ import { Modal } from './modal'
 import { useState } from 'react'
 import { ArrowUpSquare } from 'lucide-react'
 
+// Animação quando o usuário abrir e fechar a modal
 const animation = {
   hidden: { opacity: 0.25 },
   visible: {
@@ -11,6 +12,7 @@ const animation = {
 }
 
 export function ModalView() {
+  // Estado para abrir e fechar a modal
   const [isOpen, setIsOpen] = useState(true)
   return (
     <>

@@ -1,11 +1,12 @@
 import { ArrowRight } from 'lucide-react'
 import Logo from '../assets/logo.png'
 import { Selector } from './selector'
-import { useCoordinates } from '../context/coordinates-context'
+import { useAirport } from '../context/airport-context'
 
 export function Header() {
+  // Dados do aeroporto de partida e chegada dos aeroportos selecionados
   const { selector, startPoint, handleStartChange, handleEndChange, endPoint } =
-    useCoordinates()
+    useAirport()
   return (
     <header className="flex items-center justify-between px-3 py-2 bg-primary">
       <img src={Logo} alt="Logo" />

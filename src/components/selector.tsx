@@ -1,10 +1,12 @@
 import { SelectHTMLAttributes } from 'react'
-import { useCoordinates } from '../context/coordinates-context'
+import { useAirport } from '../context/airport-context'
 
+// Tipagem do seletor com todas as propriedades do select do HTML
 type SelectProps = SelectHTMLAttributes<HTMLSelectElement>
 
 export function Selector({ ...rest }: SelectProps) {
-  const { selector } = useCoordinates()
+  // Dados de todos os aeroportos disponíveis
+  const { selector } = useAirport()
 
   return (
     <select

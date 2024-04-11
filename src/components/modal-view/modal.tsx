@@ -1,5 +1,5 @@
 import { X } from 'lucide-react'
-import { useCoordinates } from '../../context/coordinates-context'
+import { useAirport } from '../../context/airport-context'
 import { motion } from 'framer-motion'
 
 interface ModalProps {
@@ -7,7 +7,7 @@ interface ModalProps {
 }
 
 export function Modal({ onClose }: ModalProps) {
-  const { startPoint, endPoint } = useCoordinates()
+  const { startPoint, endPoint } = useAirport()
   return (
     <motion.div
       layoutId="modal-view"

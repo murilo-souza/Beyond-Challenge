@@ -8,16 +8,18 @@ import ReactMapboxGL, {
 } from 'react-map-gl'
 import { Feature } from 'geojson'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import { useCoordinates } from '../context/coordinates-context'
+import { useAirport } from '../context/airport-context'
 import { Header } from '../components/header'
 import { ModalView } from '../components/modal-view'
 
 export function Home() {
-  const { startPoint, endPoint } = useCoordinates()
+  const { startPoint, endPoint } = useAirport()
 
+  // Divide as coordenadas em latitude e longitude
   const start = startPoint.coordinates.split(',').map(parseFloat)
   const end = endPoint.coordinates.split(',').map(parseFloat)
 
+  // Dados da linha entre as duas coordenadas
   const polyline: Feature = {
     type: 'Feature',
     properties: {},
@@ -53,13 +55,14 @@ export function Home() {
           </div>
 
           <Marker latitude={start[0]} longitude={start[1]}>
-            <MapPin className="text-marker size-7" />
+            <MapPin className="size-7" fill="#77BC58" />
           </Marker>
 
           <Marker latitude={end[0]} longitude={end[1]}>
-            <MapPin className="text-marker size-7" />
+            <MapPin className="size-7" fill="#77BC58" />
           </Marker>
 
+          {/* Cria uma linha entre as duas coordenadas */}
           <Source type="geojson" data={polyline}>
             <Layer
               id="lineLayer"

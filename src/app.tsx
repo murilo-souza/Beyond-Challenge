@@ -1,10 +1,10 @@
-import { CoordinatesContextProvider } from './context/coordinates-context'
+import { AirportContextProvider } from './context/airport-context'
 import { Home } from './pages/home'
 
 export function App() {
   return (
-    <CoordinatesContextProvider>
+    <AirportContextProvider>
       <Home />
-    </CoordinatesContextProvider>
+    </AirportContextProvider>
   )
 }
