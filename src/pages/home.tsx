@@ -1,6 +1,5 @@
 import { MapPin } from 'lucide-react'
 import ReactMapboxGL, {
-  GeolocateControl,
   Layer,
   Marker,
   NavigationControl,
@@ -11,6 +10,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import { useAirport } from '../context/airport-context'
 import { Header } from '../components/header'
 import { ModalView } from '../components/modal-view'
+import { NavButton } from '../components/nav-button'
 
 export function Home() {
   const { startPoint, endPoint } = useAirport()
@@ -50,11 +50,15 @@ export function Home() {
             <NavigationControl />
           </div>
 
-          <div className="absolute left-3 top-10">
-            <GeolocateControl />
+          <div className="absolute bottom-10 right-3">
+            <NavButton coordinates={start} />
           </div>
 
-          <Marker latitude={start[0]} longitude={start[1]}>
+          <Marker
+            latitude={start[0]}
+            longitude={start[1]}
+            pitchAlignment="viewport"
+          >
             <MapPin className="size-7" fill="#77BC58" />
           </Marker>
 
@@ -74,9 +78,8 @@ export function Home() {
             />
           </Source>
         </ReactMapboxGL>
+        <ModalView />
       </div>
-
-      <ModalView />
     </main>
   )
 }
