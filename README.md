@@ -42,7 +42,7 @@ Siga os passos abaixo para executar o projeto em sua máquina local:
 ## Features da Aplicação
 
 1. **Selecionar destinos de aeroportos:**
-   - Os usuários podem escolher para quais aeroportos irem.
+   - Os usuários podem escolher os aeroportos de partida e chegada.
 
 2. **Abrir e fechar modal:**
    - Os usuários podem abrir e fechar a modal.
@@ -52,4 +52,10 @@ Siga os passos abaixo para executar o projeto em sua máquina local:
 
 4. **Visualização do mapa:**
    - Os usuários podem visualizar e interagir com o mapa por meio da API do Mapbox.
+     
+5. **Re-centralizar:**
+   - Os usuários podem re-centralizar o mapa de acordo com as coordenadas de partida.
    
+6. **Informações de rota e distancia:**
+   - Os usuários podem visualizar na modal a rota que eles estão vendo e a distância entre os dois pontos.
+
