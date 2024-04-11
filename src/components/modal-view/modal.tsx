@@ -23,7 +23,7 @@ export function Modal({ onClose }: ModalProps) {
   return (
     <motion.div
       layoutId="modal-view"
-      className="fixed top-28 2xl:top-24 lg:top-20 left-3 max-h-[85vh] w-[90vw] max-w-[450px] rounded-[5px] bg-primary p-[25px] transition-opacity"
+      className="fixed top-[20%] 2xl:top-24 lg:top-20 left-3 max-h-[85vh] w-[90vw] max-w-[450px] rounded-[5px] bg-primary p-[25px] transition-opacity"
     >
       <motion.h1 className="text-white font-medium text-2xl mb-10">
         Informações
@@ -40,7 +40,7 @@ export function Modal({ onClose }: ModalProps) {
 
         <motion.div className="flex flex-col items-center max-w-[300px] min-w-[300px]">
           <motion.div className="rounded-full bg-white size-3" />
-          <motion.div className="w-1 h-[300px] bg-white" />
+          <motion.div className="w-1 h-[200px] md:h-[300px] bg-white" />
           <motion.div className="rounded-full bg-white size-3" />
         </motion.div>
 

@@ -50,7 +50,7 @@ export function Home() {
             <NavigationControl />
           </div>
 
-          <div className="absolute bottom-10 right-3">
+          <div className="absolute bottom-28 md:bottom-10 right-3">
             <NavButton coordinates={start} />
           </div>
 
