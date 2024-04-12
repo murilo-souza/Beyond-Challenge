@@ -35,7 +35,7 @@ export function Modal({ onClose }: ModalProps) {
         </motion.span>
 
         <motion.span className="text-white font-medium">
-          {startPoint.airportName}
+          {startPoint.airportCode} ({startPoint.airportName})
         </motion.span>
 
         <motion.div className="flex flex-col items-center max-w-[300px] min-w-[300px]">
@@ -45,7 +45,7 @@ export function Modal({ onClose }: ModalProps) {
         </motion.div>
 
         <motion.span className="text-white font-medium">
-          {endPoint.airportName}
+          {startPoint.airportCode} ({endPoint.airportName})
         </motion.span>
       </motion.div>
 
