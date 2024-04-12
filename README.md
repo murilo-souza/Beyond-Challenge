@@ -28,7 +28,7 @@ Siga os passos abaixo para executar o projeto em sua máquina local:
     Criei um arquivo .env.local e siga a instrução abaixo
     <br/>
     ```bash
-    VITE_API_ACCESS_TOKEN="<Seu access token vindo do site da MapBox>"
+    VITE_API_ACCESS_TOKEN="<Seu access token vindo do site do MapBox>"
 
 5. **Inicie o servidor de desenvolvimento:**
    <br/>
