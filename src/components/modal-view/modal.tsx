@@ -45,7 +45,7 @@ export function Modal({ onClose }: ModalProps) {
         </motion.div>
 
         <motion.span className="text-white font-medium">
-          {startPoint.airportCode} ({endPoint.airportName})
+          {endPoint.airportCode} ({endPoint.airportName})
         </motion.span>
       </motion.div>
 
